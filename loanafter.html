@@ -1,0 +1,110 @@
+<html lang="en">
+    <style>
+
+        
+    .navbar {
+        display: flex;
+    flex-direction: row;
+    padding: 6px 10px;
+    justify-content: center;
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    transition: background-color 0.3s ease;
+    background-color: white;
+    z-index: 0;
+        }
+        .navbar ul{
+            display: flex;
+            flex-direction: row;
+        }
+        .navbar li{
+            list-style: none;
+           padding: 11px;
+        }
+        .navbar li a {
+            text-decoration: none;
+            color:black;
+        }
+        .content
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: burlywood;
+        }
+        .logo img{
+            width: 13vh;
+    height: 13vh;
+    border-radius: 28px;
+    border: 2px #cad3db;
+}
+.Center{
+    background-image: url('/static/titanic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+         
+}
+body{
+    background-color: cadetblue;
+}
+body center h1{
+    padding-top: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    width: 32%;
+    margin-top: 136px;
+    height: 32%;
+   
+}
+.container p {
+    padding: 28px;
+    font-size: 1.5rem;
+    background-color: #264c6d;
+}
+
+
+    </style>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="static\Azim's Passport Img.jpg" alt="logo">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('mainpage')}}">About Me</a></li>
+            <li><a href="{{ url_for('home') }}">Projects</a></li>
+            <li><a href="Contact Me">Connect Me</a></li>
+        </ul>
+        
+    </div>
+    <center class="Center">
+        <h1>Titanic survival prediction</h1>
+    <div class="container">
+
+        {% if data == 0 %}
+        <!-- Not Alive Image -->
+        <p #="para">Not Get Loan</p>
+        <p>We understand that this prediction may be distressing. Predictive models are not definitive, and this result is based on statistical analysis. It's important to approach such predictions with caution and consult with healthcare professionals for accurate assessments.</p>
+
+
+        {% else %} 
+        <!-- Alive Image -->
+        <p>You will get loan</p>
+
+
+        {% endif %} 
+        <br><br>
+        <a href="/">Go back to the home page</a>
+    </div>
+    </center>
+
+</body>
+</html>
